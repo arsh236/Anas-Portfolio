@@ -47,4 +47,27 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('fade-in');
         observer.observe(el);
     });
+
+    // Form Submission Handling
+    window.submitted = false; // logic to track if the form was submitted
+    const contactForm = document.querySelector('.contact-form');
+    const successMessage = document.getElementById('success-message');
+    const hiddenIframe = document.getElementById('hidden_iframe');
+
+    if (hiddenIframe) {
+        hiddenIframe.addEventListener('load', () => {
+            if (window.submitted) {
+                contactForm.style.display = 'none';
+                successMessage.style.display = 'block';
+                contactForm.reset();
+                window.submitted = false;
+
+                // Optional: Show form again after some time
+                // setTimeout(() => {
+                //     successMessage.style.display = 'none';
+                //     contactForm.style.display = 'block';
+                // }, 5000);
+            }
+        });
+    }
 });
