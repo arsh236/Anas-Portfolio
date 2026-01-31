@@ -108,9 +108,7 @@ nav {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--accent);
-    border: 2px solid var(--accent);
-    padding: 5px 10px;
-    border-radius: 5px;
+    text-decoration: none;
 }
 
 .nav-links {
